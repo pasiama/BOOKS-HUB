@@ -1,0 +1,92 @@
+/* Basic styles for full page */
+body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    /* Landing page container */
+    .landing-page {
+      background-image: url('/src/assets/section1.png'); /* Replace with your background image */
+      background-size: cover;
+      background-position: center;
+      height: 100vh; /* Full screen height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: rgb(6, 6, 6);
+      text-align: center;
+      padding: 0 20px; /* Add padding for smaller screens */
+      box-sizing: border-box;
+    }
+    
+    /* Center the text in the middle of the screen */
+    .centered-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    h1 {
+      font-size: 4.5rem;
+      font-style: italic;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      animation: fade-in-out 1s ease-in-out;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 120px; /* Space between the buttons */
+      justify-content: center;
+      margin-top: 430px;
+    }
+    
+    /* Styling for buttons */
+    .submit-btn {
+      padding: 10px 70px;
+      background-color: #7a4ff3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+      background-color: #5e39bf;
+    }
+    
+    /* Responsive design for the buttons */
+    @media (max-width: 768px) {
+      .submit-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+    
+    /* Optional fade-in-out effect */
+    @keyframes fade-in-out {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+    

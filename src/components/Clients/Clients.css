@@ -1,0 +1,66 @@
+.clients-section {
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .clients-header h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .clients-header p {
+      font-size: 1rem;
+      color: #6c757d;
+    }
+    
+    .clients-logos {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .clients-logos img {
+      width: 50px;
+      height: auto;
+    }
+    
+    .management-header h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .management-header p {
+      font-size: 1rem;
+      color: #6c757d;
+      margin-bottom: 2rem;
+    }
+    
+    .services {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 2rem;
+    }
+    
+    .service-card {
+      max-width: 300px;
+      padding: 1rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+    }
+    
+    .service-card .icon img {
+      width: 50px;
+      margin-bottom: 1rem;
+    }
+    
+    .service-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .service-card p {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+    

@@ -1,0 +1,28 @@
+.search-form{
+      width: 100%;
+      max-width: 680px;
+      border-radius: 3.8rem;
+      border-color: black !important;
+
+      /* margin-left: 10rem; */
+      align-items: center;
+      margin-top: 1rem;
+  }
+  .search-form-elem{
+      padding: .4rem .8rem;
+      /* border-radius: 3.8rem; */
+      align-items: center;
+      justify-content: space-around;
+      display: flex;
+      margin-left: 8rem;
+      /* border-color: black !important; */
+  }
+  .search-form-elem .form-control{
+      font-size: 2rem;
+      padding: 0.6rem;
+    
+
+  }
+  .search-form-elem .form-control::placeholder{
+      opacity: 0.9;
+  }

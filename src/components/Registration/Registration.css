@@ -1,0 +1,145 @@
+/* Container for the entire registration page */
+.registration-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+      padding: 20px; /* Add padding for small screens */
+    }
+    
+    /* Flexbox to split the image and form */
+    .form-container {
+      display: flex;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      width: 800px;
+      max-width: 100%;
+      flex-direction: row;
+    }
+    
+    /* Style for the image container */
+    /* .image-container {
+      width: 40%;
+      background-color: #f4f4f4;
+    } */
+    
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Form section */
+    .form-section {
+      padding: 40px;
+      width: 60%;
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+      font-size: 1.8em;
+    }
+    
+    /* Styling for form groups */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #333;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    
+    .form-input:focus {
+      border-color: #7a4ff3;
+      outline: none;
+    }
+    
+    /* Error message */
+    .error {
+      color: #e74c3c;
+      font-size: 0.875rem;
+      margin-top: 5px;
+    }
+    
+    /* Submit button styling */
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #7a4ff3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+      background-color: #5e39bf;
+    }
+    
+    /* Media queries to make the form responsive */
+    
+    /* For tablets and smaller devices (less than 768px wide) */
+    @media (max-width: 768px) {
+      .form-container {
+        flex-direction: column; /* Stack the image and form vertically */
+      }
+    
+      .image-container {
+        width: 100%; /* Take up full width */
+        height: 200px; /* Adjust height for mobile */
+      }
+    
+      .form-section {
+        width: 100%; /* Make form section take up full width */
+        padding: 20px; /* Reduce padding for smaller screens */
+      }
+    
+      h2 {
+        font-size: 1.5em; /* Reduce font size for smaller screens */
+      }
+    }
+    
+    /* For mobile devices (less than 480px wide) */
+    @media (max-width: 480px) {
+      .form-input {
+        padding: 10px; /* Reduce padding for input fields */
+        font-size: 0.9rem; /* Adjust font size */
+      }
+    
+      .submit-btn {
+        padding: 10px; /* Reduce padding for the button */
+        font-size: 0.9rem; /* Adjust font size for the button */
+      }
+    
+      h2 {
+        font-size: 1.3em; /* Further reduce font size for the title */
+      }
+    
+      .form-section {
+        padding: 15px; /* Further reduce padding for very small screens */
+      }
+    
+      .image-container {
+        height: 150px; /* Further reduce height for the image on smaller screens */
+      }
+    }
+    

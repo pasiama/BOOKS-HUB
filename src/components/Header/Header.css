@@ -1,0 +1,70 @@
+.header-content {
+      min-height: 65vh;
+      background: white;
+      flex-direction: column;
+      display: flex; /* Ensure flex is applied */
+      align-items: center; /* Center align items */
+      justify-content: center; /* Center content vertically */
+  }
+  
+  /* Base styles for header title */
+  .header-title {
+      font-size: 3.2em; /* Default size */
+      line-height: 1.1;
+      color: #fff; /* Change this to a contrasting color for visibility */
+  }
+  
+  /* Base styles for header text */
+  .header-text {
+      margin-top: -1.8rem;
+      margin-bottom: 2.8rem;
+      opacity: 0.8;
+      max-width: 770px;
+      text-align: center; /* Center text for better readability */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) { /* Medium screens */
+      .header-title {
+          font-size: 2.8em; /* Slightly smaller */
+      }
+  }
+  
+  @media (max-width: 992px) { /* Tablets */
+      .header-title {
+          font-size: 2.4em; /* Smaller */
+      }
+      
+      .header-text {
+          margin-top: -1rem; /* Adjust margin for smaller screens */
+          margin-bottom: 2rem; /* Adjust bottom margin */
+          max-width: 90%; /* Allow for more space */
+      }
+  }
+  
+  @media (max-width: 768px) { /* Mobile devices */
+      .header-title {
+          font-size: 2em; /* Further reduce size */
+      }
+      
+      .header-text {
+          margin-top: -0.5rem; /* Further adjust margins */
+          margin-bottom: 1.5rem;
+          max-width: 95%; /* More responsive spacing */
+          font-size: 1.2rem; /* Optional: adjust font size */
+      }
+  }
+  
+  @media (max-width: 576px) { /* Extra small devices */
+      .header-title {
+          font-size: 1.8em; /* Smallest size for mobile */
+          text-align: center; /* Center the title */
+      }
+      
+      .header-text {
+          margin-top: 0; /* Reset margin */
+          margin-bottom: 1rem; /* Smaller bottom margin */
+          font-size: 1rem; /* Smaller text size */
+      }
+  }
+  

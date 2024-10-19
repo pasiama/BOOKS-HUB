@@ -1,0 +1,49 @@
+.home-container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+    
+    .bookshelf-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .bookshelf-button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 200px;
+    }
+    
+    .bookshelf-details {
+      flex-grow: 1;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+    
+    .bookshelf-details ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .bookshelf-details ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .bookshelf-details h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
