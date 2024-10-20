@@ -24,7 +24,7 @@ const Login = () => {
     );
 
     if (user) {
-      localStorage.setItem('auth', JSON.stringify(user));
+      localStorage.setItem('users', JSON.stringify(user));
       console.log('Login successful:', user);
       navigate('/home'); // Redirect to dashboard or any protected route
     } else {
@@ -36,9 +36,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="form-container">
-        {/* <div className="image-container">
-          <img src='' alt="Login Visual" />
-        </div> */}
+       
         <div className="form-section">
           <h2>Login</h2>
           <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>

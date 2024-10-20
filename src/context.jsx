@@ -1,103 +1,6 @@
-// import React, { useState, useContext, useEffect, useCallback } from 'react';
-// import PropTypes from 'prop-types';
-
-// const API_KEY = "AIzaSyAx4espej2iP9eK6qTfQGzOyDN4iXvww30";
-// const URL = "https://www.googleapis.com/books/v1/volumes?q=";
-
-// //const URL = "https://www.googleapis.com/books/v1/volumes?q=''&key='AIzaSyAx4espej2iP9eK6qTfQGzOyDN4iXvww30'+'&maxResults=40";
-// const AppContext = React.createContext();
-
-// const AppProvider = ({ children }) => {
-//     const [searchTerm, setSearchTerm] = useState("the lost world");
-//     const [books, setBooks] = useState([]);
-//     const [loading, setLoading] = useState(true);
-//     const [resultTitle, setResultTitle] = useState("");
-
-//     const setSearchTermAndStore = (term) => {
-//         setSearchTerm(term);
-//         localStorage.setItem("searchTerm", term);
-//     };
-
-//     const fetchBooks = useCallback(async () => {
-//         setLoading(true);
-//         try {
-//             const response = await fetch(`${URL}${encodeURIComponent(searchTerm)}&key=${API_KEY}&maxResults=40`);
-//             const data = await response.json();
-//             const { items } = data; // 'items' contains the books array
-
-//             if (items) {
-//                 const newBooks = items.slice(0, 20).map((bookSingle) => {
-//                     const { id } = bookSingle;
-//                     const { title, authors, publisher, imageLinks, description, publishedDate } = bookSingle.volumeInfo;
-                    
-//                     return {
-//                         id: id,
-//                         title: title || "No title available",
-//                         author: authors ? authors.join(", ") : "Unknown author",
-//                         publisher: publisher || "Unknown publisher",
-//                         publishedDate: publishedDate || "No publish date",
-//                         description: description || "No description available",
-//                         thumbnail: imageLinks ? imageLinks.thumbnail : "No image available",
-//                     };
-//                 });
-    
-//                 setBooks(newBooks);
-    
-//                 if (newBooks.length > 0) {
-//                     setResultTitle("Your Search Results");
-//                     console.log(newBooks);
-//                 } else {
-//                     setResultTitle("No Search Result Found!");
-//                 }
-//             } else {
-//                 setBooks([]);
-//                 setResultTitle("No Search Result Found!");
-//             }
-    
-//             setLoading(false);
-//         } catch (error) {
-//             console.error(error);
-//             setLoading(false);
-//         }
-    
-//     }, [searchTerm]);
-
-//     // useEffect(() => {
-//     //     fetchBooks();
-//     // }, [searchTerm, fetchBooks]);
-
-//     useEffect(() => {
-//         const storedSearchTerm = localStorage.getItem("searchTerm");
-//         if (storedSearchTerm) {
-//             setSearchTerm(storedSearchTerm);
-//         }
-//         fetchBooks(); // Fetch books when the search term changes or on initial load
-//     }, [fetchBooks]);
-
-//     return (
-//         <AppContext.Provider value={{
-//             loading, books, setSearchTerm: setSearchTermAndStore, resultTitle, setResultTitle,
-//         }}>
-//             {children}
-//         </AppContext.Provider>
-//     );
-// };
-
-// AppProvider.propTypes = {
-//     children: PropTypes.node.isRequired,
-// };
-
-// export const useGlobalContext = () => {
-//     return useContext(AppContext);
-// };
-
-// export { AppContext, AppProvider };
-
-
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import 'react-toastify/dist/ReactToastify.css';
-// import coverImg from "../../assets/cover_not_found.jpg";
 
 
 const API_KEY = "AIzaSyAx4espej2iP9eK6qTfQGzOyDN4iXvww30";
@@ -121,52 +24,6 @@ const AppProvider = ({ children }) => {
         setSearchTerm(term);
         localStorage.setItem("searchTerm", term);
     };
-
-    // const fetchBooks = useCallback(async () => {
-    //     setLoading(true);
-    //     try {
-    //         const response = await fetch(`${URL}${encodeURIComponent(searchTerm)}&key=${API_KEY}&maxResults=40`);
-    //         const data = await response.json();
-    //         const { items } = data;
-
-    //         if (items) {
-    //             const newBooks = items.slice(0, 20).map((bookSingle) => {
-    //                 const { id } = bookSingle;
-    //                 const { title, authors, publisher, imageLinks, description, publishedDate, categories } = bookSingle.volumeInfo;
-                    
-    //                 return {
-    //                     id: id,
-    //                     title: title || "No title available",
-    //                     author: authors ? authors.join(", ") : "Unknown author",
-    //                     publisher: publisher || "Unknown publisher",
-    //                     publishedDate: publishedDate || "No publish date",
-    //                     description: description || "No description available",
-    //                     thumbnail: imageLinks ? imageLinks.thumbnail : "No image available",
-    //                     categories: categories || "No categories available" // Categories field
-
-    //                 };
-    //             });
-
-            
-                
-    //             setBooks(newBooks);
-
-    //             if (newBooks.length > 0) {
-    //             setResultTitle(`Search Results for: "${searchTerm}"`); // Set the search term as the result title
-    //             } else {
-    //                 setResultTitle("No Search Result Found!");
-    //             }
-    //         } else {
-    //             setBooks([]);
-    //             setResultTitle("No Search Result Found!");
-    //         }
-
-    //         setLoading(false);
-    //     } catch (error) {
-    //         console.error(error);
-    //         setLoading(false);
-    //     }
-    // }, [searchTerm]);
 
     const fetchBooks = useCallback(async () => {
         setLoading(true);
@@ -214,19 +71,6 @@ const AppProvider = ({ children }) => {
         fetchBooks(); // Fetch books when the search term changes or on initial load
     }, [fetchBooks]);
     
-    // const addToMyBooks = (book) => {
-    //     setMyBooks((prevBooks) => {
-    //         // Check if the book is already in "My Books"
-    //         const isBookInList = prevBooks.find((b) => b.id === book.id);
-    //         if (!isBookInList) {
-    //             const updatedBooks = [...prevBooks, book];
-    //             localStorage.setItem('myBooks', JSON.stringify(updatedBooks)); // Save to localStorage
-    //             // toast.success(`${book.title} added to My Books!`);
-    //             return updatedBooks;   
-    //                  }
-    //         return prevBooks;
-    //     });
-    // };
     const addToMyBooks = (book) => {
         setMyBooks((prevBooks) => {
             // Get the currently stored books from localStorage (if available)
@@ -237,7 +81,6 @@ const AppProvider = ({ children }) => {
     
             if (!isBookInList) {
                 // Update both local state and localStorage
-                // const updatedBooks = [...storedBooks, book]; // Add new book to the array
                 const updatedBooks = [...storedBooks, { ...book, comments: "", notes: "", review: "", isCurrentlyReading: false }];
 
                 localStorage.setItem('myBooks', JSON.stringify(updatedBooks)); // Save to localStorage
@@ -260,26 +103,14 @@ const AppProvider = ({ children }) => {
         setMyBooks(storedBooks); // Initialize state with stored books
     }, []);
     
-    
-    
-    // const removeFromMyBooks = (bookId) => {
-    //     setMyBooks((prevBooks) => {
-    //         const updatedBooks = prevBooks.filter((book) => book.id !== bookId);
-    //         localStorage.setItem('myBooks', JSON.stringify(updatedBooks)); // Update localStorage
-
-    //         const removedBook = prevBooks.find((book) => book.id === bookId);
-    //         window.alert(`${removedBook.title} removed from My Books!`);
-    //         return updatedBooks;
-    //     });
-    // };
     const removeFromMyBooks = (bookTitle) => {
         setMyBooks((prevBooks) => {
-            // Filter the books based on title instead of id
+            // Filter the books based on title instead of title
             const updatedBooks = prevBooks.filter((book) => book.title !== bookTitle);
-            console.log("!");
+         
             // Update localStorage with the new list
             localStorage.setItem('myBooks', JSON.stringify(updatedBooks));
-            console.log("!!");
+         
 
             // Find the book that was removed to display the alert
             const removedBook = prevBooks.find((book) => book.title === bookTitle);

@@ -11,7 +11,7 @@ const NavBar = () => {
 const handleNavbar = () => setToggleMenu(prevState => !prevState);
 const handleLogout = () => {
   // Clear user data from localStorage
-  localStorage.removeItem('auth'); // Assuming 'auth' is the key used to store user info
+  localStorage.removeItem('users'); // Assuming 'auth' is the key used to store user info
   navigate('/'); // Redirect to the landing page
 };
 
